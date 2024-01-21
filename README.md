@@ -135,7 +135,10 @@ The following open-source projects make use of this library:
 
 - [KanbanView](https://github.com/AlexanderWillner/KanbanView)
 - [Things CLI](https://github.com/thingsapi/things-cli)
-- [ThingsStats](https://github.com/lmgibson/ThingsStats)
-- [Things3 to Notion](https://github.com/Avery2/things3notionscript)
-- [things-to-org](https://github.com/chrizel/things-to-org)
 - [Things to CSV](https://github.com/nathankoerschner/things_to_csv)
+- [things-3-report](https://github.com/CaAlden/things-3-report)
+- [things-to-org](https://github.com/chrizel/things-to-org)
+- [Things3 to Markdown](https://github.com/chrisgurney/things2md)
+- [Things3 to Notion](https://github.com/Avery2/things3notionscript)
+- [ThingsStats](https://github.com/lmgibson/ThingsStats)
+- [ThingsReview](https://github.com/minthemiddle/things-review-py)
