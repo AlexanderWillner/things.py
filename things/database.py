@@ -415,7 +415,7 @@ class Database:
 
         sql_query = f"""
             SELECT
-                uuid, 'tag' AS type, title, shortcut
+                uuid, 'tag' AS type, title, shortcut, parent
             FROM
                 {TABLE_TAG}
             WHERE
@@ -424,7 +424,22 @@ class Database:
             ORDER BY "index"
             """
 
-        return self.execute_query(sql_query)
+        result = self.execute_query(sql_query)
+
+        # Add parent_title field for better usability
+        for tag in result:
+            if tag['parent']:
+                # Get parent tag title
+                parent_sql = f"SELECT title FROM {TABLE_TAG} WHERE uuid = ?"
+                parent_result = self.execute_query(parent_sql, parameters=(tag['parent'],))
+                if parent_result:
+                    tag['parent_title'] = parent_result[0]['title']
+                else:
+                    tag['parent_title'] = None
+            else:
+                tag['parent_title'] = None
+
+        return result
 
     def get_tags_of_task(self, task_uuid):
         """Get tag titles of task."""

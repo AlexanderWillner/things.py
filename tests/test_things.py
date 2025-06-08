@@ -199,7 +199,7 @@ class ThingsCase(unittest.TestCase):  # noqa: V103 pylint: disable=R0904
         task = things.get("invalid_uuid", "NOT FOUND")
         self.assertEqual("NOT FOUND", task)
         task = things.get("Qt2AY87x2QDdowSn9HKTt1")
-        self.assertEqual(4, len(task.keys()))  # type: ignore
+        self.assertEqual(6, len(task.keys()))  # type: ignore
 
     def test_todos(self):
         todos = things.todos(start="Anytime", status="completed")
